@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'EmmattxDev-Website'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_49C8A1DE94D9476898C8AFEE5A3F1CB5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3FF354042BD4CCDBE3E77274BFC45E0 }}
