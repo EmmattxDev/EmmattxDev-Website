@@ -1,0 +1,56 @@
+.skills{
+    background-color: var(--primary-color-4);
+
+    &-grid{
+        grid-template-columns: repeat(3, 250px);
+        gap: 50px;
+        justify-content: center;
+    }
+
+    &-fields{
+        .skills-field-1{
+            padding: 100px 0;
+        }
+
+        .skills-field-2{
+            padding: 50px 0 100px;
+        }
+
+        .skills-field-1,
+        .skills-field-2{
+
+            .skills-field-title{
+                font-size: 82px;
+                font-weight: 800;
+                line-height: 72px;
+                text-align: center;
+                color: var(--primary-color-3);
+                background: none !important;
+                padding: 0 0 40px;
+            }
+            .skills-cards{
+        
+                .skills-card{
+                    height: 300px;
+                    box-shadow: 0 0 10px var(--box-shadow-2);
+                    background-color: var(--bg-text); 
+                    border-radius: 16px;
+                    padding: 20px 15px;
+        
+                    h3{
+                        color: var(--card-header);
+                        font-weight: 700;
+                        text-align: center;
+                    }
+        
+                    p{
+                        text-align: center;
+                        padding-top: 16px;
+                    }
+        
+                }
+            }
+        }
+    }
+
+}

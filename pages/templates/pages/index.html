@@ -1,0 +1,362 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block bodyMain %}
+{% include 'pages/partials/nav.html' %}
+
+<header class='header'>
+    <div class="hero">
+        <div class='hero-content'>
+            <h1>Hi, I am <span>Emmanuel Chukwuka</span><br/> I am a <span>Full Stack Web</span> Developer<br> and <span>Email</span> Developer</h1>
+            <p>I help businesses grow and make more profit by building an efficient, scalable <br>and succinct online presence that provide solution to their customers demands.</p>
+            <div class="header-social-links">
+                <a href="https://linkedin.com/in/emmanuel-chukwuka">
+                    <p class="social-link">
+                        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z"/></svg>
+                    </p>
+                </a>
+
+                <a href="https://twitter.com/emmachukwuka_01">
+                    <p class="social-link">
+                        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M22,3.999c-0.78,0.463-2.345,1.094-3.265,1.276c-0.027,0.007-0.049,0.016-0.075,0.023c-0.813-0.802-1.927-1.299-3.16-1.299 c-2.485,0-4.5,2.015-4.5,4.5c0,0.131-0.011,0.372,0,0.5c-3.353,0-5.905-1.756-7.735-4c-0.199,0.5-0.286,1.29-0.286,2.032 c0,1.401,1.095,2.777,2.8,3.63c-0.314,0.081-0.66,0.139-1.02,0.139c-0.581,0-1.196-0.153-1.759-0.617c0,0.017,0,0.033,0,0.051 c0,1.958,2.078,3.291,3.926,3.662c-0.375,0.221-1.131,0.243-1.5,0.243c-0.26,0-1.18-0.119-1.426-0.165 c0.514,1.605,2.368,2.507,4.135,2.539c-1.382,1.084-2.341,1.486-5.171,1.486H2C3.788,19.145,6.065,20,8.347,20 C15.777,20,20,14.337,20,8.999c0-0.086-0.002-0.266-0.005-0.447C19.995,8.534,20,8.517,20,8.499c0-0.027-0.008-0.053-0.008-0.08 c-0.003-0.136-0.006-0.263-0.009-0.329c0.79-0.57,1.475-1.281,2.017-2.091c-0.725,0.322-1.503,0.538-2.32,0.636 C20.514,6.135,21.699,4.943,22,3.999z"/></svg>
+                    </p>
+                </a>
+                
+                <a href="https://github.com/EmmattxDev">
+                    <p class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 12 2 C 6.476563 2 2 6.476563 2 12 C 2 17.523438 6.476563 22 12 22 C 17.523438 22 22 17.523438 22 12 C 22 6.476563 17.523438 2 12 2 Z M 12 4 C 16.410156 4 20 7.589844 20 12 C 20 12.46875 19.953125 12.929688 19.875 13.375 C 19.628906 13.320313 19.265625 13.253906 18.84375 13.25 C 18.53125 13.246094 18.140625 13.296875 17.8125 13.34375 C 17.925781 12.996094 18 12.613281 18 12.21875 C 18 11.257813 17.53125 10.363281 16.78125 9.625 C 16.988281 8.855469 17.191406 7.535156 16.65625 7 C 15.074219 7 14.199219 8.128906 14.15625 8.1875 C 13.667969 8.070313 13.164063 8 12.625 8 C 11.933594 8 11.273438 8.125 10.65625 8.3125 L 10.84375 8.15625 C 10.84375 8.15625 9.964844 6.9375 8.34375 6.9375 C 7.777344 7.507813 8.035156 8.953125 8.25 9.6875 C 7.484375 10.417969 7 11.28125 7 12.21875 C 7 12.546875 7.078125 12.859375 7.15625 13.15625 C 6.878906 13.125 5.878906 13.03125 5.46875 13.03125 C 5.105469 13.03125 4.542969 13.117188 4.09375 13.21875 C 4.03125 12.820313 4 12.414063 4 12 C 4 7.589844 7.589844 4 12 4 Z M 5.46875 13.28125 C 5.863281 13.28125 7.0625 13.421875 7.21875 13.4375 C 7.238281 13.492188 7.257813 13.542969 7.28125 13.59375 C 6.851563 13.554688 6.019531 13.496094 5.46875 13.5625 C 5.101563 13.605469 4.632813 13.738281 4.21875 13.84375 C 4.1875 13.71875 4.148438 13.597656 4.125 13.46875 C 4.5625 13.375 5.136719 13.28125 5.46875 13.28125 Z M 18.84375 13.5 C 19.242188 13.503906 19.605469 13.570313 19.84375 13.625 C 19.832031 13.691406 19.796875 13.746094 19.78125 13.8125 C 19.527344 13.753906 19.109375 13.667969 18.625 13.65625 C 18.390625 13.652344 18.015625 13.664063 17.6875 13.6875 C 17.703125 13.65625 17.707031 13.625 17.71875 13.59375 C 18.058594 13.546875 18.492188 13.496094 18.84375 13.5 Z M 6.09375 13.78125 C 6.65625 13.785156 7.183594 13.824219 7.40625 13.84375 C 7.929688 14.820313 8.988281 15.542969 10.625 15.84375 C 10.222656 16.066406 9.863281 16.378906 9.59375 16.75 C 9.359375 16.769531 9.113281 16.78125 8.875 16.78125 C 8.179688 16.78125 7.746094 16.160156 7.375 15.625 C 7 15.089844 6.539063 15.03125 6.28125 15 C 6.019531 14.96875 5.929688 15.117188 6.0625 15.21875 C 6.824219 15.804688 7.097656 16.5 7.40625 17.125 C 7.683594 17.6875 8.265625 18 8.90625 18 L 9.03125 18 C 9.011719 18.109375 9 18.210938 9 18.3125 L 9 19.40625 C 6.691406 18.472656 4.933594 16.5 4.28125 14.0625 C 4.691406 13.960938 5.152344 13.855469 5.5 13.8125 C 5.660156 13.792969 5.863281 13.777344 6.09375 13.78125 Z M 18.625 13.90625 C 19.074219 13.917969 19.472656 14.003906 19.71875 14.0625 C 19.167969 16.132813 17.808594 17.855469 16 18.90625 L 16 18.3125 C 16 17.460938 15.328125 16.367188 14.375 15.84375 C 15.957031 15.554688 16.988281 14.863281 17.53125 13.9375 C 17.910156 13.910156 18.355469 13.898438 18.625 13.90625 Z M 12.5 18 C 12.773438 18 13 18.226563 13 18.5 L 13 19.9375 C 12.671875 19.980469 12.339844 20 12 20 L 12 18.5 C 12 18.226563 12.226563 18 12.5 18 Z M 10.5 19 C 10.773438 19 11 19.226563 11 19.5 L 11 19.9375 C 10.664063 19.894531 10.324219 19.832031 10 19.75 L 10 19.5 C 10 19.226563 10.226563 19 10.5 19 Z M 14.5 19 C 14.742188 19 14.953125 19.175781 15 19.40625 C 14.675781 19.539063 14.34375 19.660156 14 19.75 L 14 19.5 C 14 19.226563 14.226563 19 14.5 19 Z"/></svg>
+                    </p>
+                </a>
+
+                <a href="https://medium.com">
+                    <p class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 6A7 7 0 107 20 7 7 0 107 6zM18 6.5A3 6.5 0 1018 19.5 3 6.5 0 1018 6.5zM23 8A1 5 0 1023 18 1 5 0 1023 8z"/></svg> 
+                    </p>
+                </a>
+
+                <a href="https://wa.me/+2349132736053">
+                    <p class="social-link">
+                        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M19.077,4.928C17.191,3.041,14.683,2.001,12.011,2c-5.506,0-9.987,4.479-9.989,9.985 c-0.001,1.76,0.459,3.478,1.333,4.992L2,22l5.233-1.237c1.459,0.796,3.101,1.215,4.773,1.216h0.004 c5.505,0,9.986-4.48,9.989-9.985C22.001,9.325,20.963,6.816,19.077,4.928z M16.898,15.554c-0.208,0.583-1.227,1.145-1.685,1.186 c-0.458,0.042-0.887,0.207-2.995-0.624c-2.537-1-4.139-3.601-4.263-3.767c-0.125-0.167-1.019-1.353-1.019-2.581 S7.581,7.936,7.81,7.687c0.229-0.25,0.499-0.312,0.666-0.312c0.166,0,0.333,0,0.478,0.006c0.178,0.007,0.375,0.016,0.562,0.431 c0.222,0.494,0.707,1.728,0.769,1.853s0.104,0.271,0.021,0.437s-0.125,0.27-0.249,0.416c-0.125,0.146-0.262,0.325-0.374,0.437 c-0.125,0.124-0.255,0.26-0.11,0.509c0.146,0.25,0.646,1.067,1.388,1.728c0.954,0.85,1.757,1.113,2.007,1.239 c0.25,0.125,0.395,0.104,0.541-0.063c0.146-0.166,0.624-0.728,0.79-0.978s0.333-0.208,0.562-0.125s1.456,0.687,1.705,0.812 c0.25,0.125,0.416,0.187,0.478,0.291C17.106,14.471,17.106,14.971,16.898,15.554z"/></svg>
+                    </p>
+                </a>
+
+            </div>
+            <div class='btn-links'>
+                <div class="about-btn"><a href="#About"><p class='about-btn-text'>About Me</p></a></div>
+                <div class="contact-btn"><a href="#Contact"><p class='contact-btn-text'>Get in Touch</p></a></div>
+                
+            </div>
+        </div>
+    
+        <div class="hero__img">
+            <svg class="hero__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <mask id="mask0" mask-type="alpha">
+                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                </mask>
+                <g mask="url(#mask0)">
+                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+
+                    <image class="hero__blob-img" x="10" y="12" href="{% static 'pages/img/hero-cropped.png' %}"/>
+                </g>
+            </svg>
+        </div>
+
+
+    </div>
+
+    <div class="ball">
+        <a href="#About">
+
+            <div class="ball-text">
+    
+                <p>Scroll Down</p>
+                <div class='mouse-bounce'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 17 31.924"><g transform="translate(-374 -923)"><g transform="translate(374 923)" fill="rgba(255,255,255,0)" stroke="#707070" stroke-width="1"><rect width="17" height="31.924" rx="8.5" stroke="none"/><rect x="0.5" y="0.5" width="16" height="30.924" rx="8" fill="none"/></g><line y2="10" transform="translate(382.752 944.5)" fill="none" stroke="#707070" stroke-width="1"/></g></svg>
+                </div>
+                    
+            </div>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section id='About' class="about">
+        <div class="about-img"><img src="../../static/pages/img/about-imageL.png" alt=""></div>
+
+        <div class="about-content">
+            <p>
+                I Am A Very Passionate And Goal Driven Individual That 
+                Belief That There's Always A Solution To A Problem. 
+                With This Mind Set, I Fell So Much In Love And 
+                Interested In Software And Web Development Because 
+                It Resonates With Me.
+                <br/>
+                <br/>
+                <br/>
+                I Have Always Wanted To Build "What That Matters", 
+                Futuristic and Scalable Products That Can Better The Present Society And 
+                Generations To Come.
+            </p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="section-header">
+            <h1 class='section-title z-2'><span class='impo-text'>MY</span> SKILLS<span class='skills-bg-text z-1'>SKILLS</span></h1>
+            <p class='section-description'>
+                I work with these languages, tools and frameworks to 
+                build seamless, scalable and succinct Web 
+                Applications, Websites and Emails.
+            </p>
+        </div>
+        <div class="skills-fields">
+            <div class="skills-field-1">
+                <h2 class='skills-field-title'>Web Development <br>Toolbox</h2>
+                <div class="grid skills-grid skills-cards">
+                    <div class="grid-item skills-1 skills-card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, Sass, Bootstrap, React, TailwindCSS.</p></div>
+                    <div class="grid-item skills-2 skills-card"><h3>Backend</h3><p>Python, Django</p></div>
+                    <div class="grid-item skills-3 skills-card"><h3>Database</h3><p>MySql, Postgresql, MongoDB, AWS S3, Sqlite3.</p></div>
+                    <div class="grid-item skills-4 skills-card"><h3>Design</h3><p>Adobe XD, Figma, Canva, Adobe Photoshop.</p></div>
+                    <div class="grid-item skills-5 skills-card"><h3>Deployment</h3><p>AWS, Microsoft Azure, Heroku, Netlify.</p></div>
+                    <div class="grid-item skills-5 skills-card"><h3>Tools</h3><p>Git, Github, Framer-motion, Fontawesome, gulp, npm, pip.</p></div>
+                </div>
+            </div>
+
+            <div class="skills-field-2">
+                <h2 class='skills-field-title'>Email Development <br>Toolbox</h2>
+                <div class="grid skills-grid skills-cards">
+                    <div class="grid-item skills-1 skills-card"><h3>Development</h3><p>HTML, CSS, MJML, Foundation-for-Email (framework), HEML, BeeFree (CMS).</p></div>
+                    <div class="grid-item skills-2 skills-card"><h3>Testing</h3><p>Litmus, Email-on-acid.</p></div>
+                    <div class="grid-item skills-3 skills-card"><h3>Email Service Providers (ESPs)</h3><p>Mailchimp, Klaviyo, Salesforce, Campaign Monitor, Constant Contact, SendGrid, Mailgun etc.</p></div>
+                    <div class="grid-item skills-4 skills-card"><h3>Design</h3><p>Adobe XD, Figma, Canva, Adobe Photoshop.</p></div>
+                    <div class="grid-item skills-5 skills-card"><h3>Deployment</h3><p>AWS S3, Cloudinary, ImageBB, Azure storage.</p></div>
+                    <div class="grid-item skills-5 skills-card"><h3>Tools</h3><p>Git, Github, gulp, grunt, npm.</p></div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="section-header">
+            <h1 class='section-title'><span class='impo-text'>MY</span> TIMELINE<span class='bg-text'>TIMELINE</span></h1>
+            <p class='section-description'>
+                Here are few of my Education and Work experience...
+            </p>
+        </div>
+
+        <div class="grid timeline-grid">
+            <div id='timeline-1' class="grid-item">
+                <ul class="timeline-cards">
+                    {% for list in experience|slice:":3" %}
+                    <li id="timeline-card-{{forloop.counter}}">
+                        <div class='timeline-card'>
+                            <span class='year-tag'>{{list.started}} - 
+                                {% if not list.is_active %}{{list.ended}}
+                                {% else %}
+                                Present
+                                {% endif %}
+                            </span>
+                            <h2><span class="impo-text">{{list.title}}</span> - {{list.company}}</h2>
+                            <P>{{list.description}}</P>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+            <div id='timeline-2' class="grid-item"></div>
+            <div id='timeline-3' class="grid-item">
+                <ul class="timeline-cards">
+                    {% for list in experience|slice:":3" %}
+                    <li id="timeline-card-{{forloop.counter}}">
+                        <div class='timeline-card'>
+                            <span class='year-tag'>{{list.started}} - 
+                                {% if not list.is_active %}{{list.ended}}
+                                {% else %}
+                                Present
+                                {% endif %}</span>
+                            <h2><span class="impo-text">{{list.title}}</span> - {{list.company}}</h2>
+                            <P>{{list.description}}</P>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>        
+    </section>
+
+    <section id='portfolio' class="portfolio">
+        <div class="section-header">
+            <h1 id='portfolio-title' class='section-title z-2'><span class=''>MY</span> PORTFOLIO<span class='portfolio-bg-text z-1'>PORTFOLIO</span></h1>
+            <p id='portfolio-description' class='section-description'>
+                Here are some of my recent projects that I've done using my programming tech stack.<br/>
+                <span class='desktop-instruct-text portfolio-impo-text'>Hover your mouse on the images to see more details...</span>
+            </p>
+        </div>
+
+        <ul class="grid portfolio-grid">
+       
+            {% for list in projects %}
+            <li id="portfolio-{{forloop.counter}}">
+                <div class="portfolio-item">
+                    <div class="portfolio-img"><img src="{{list.image.url }}" alt="project image"/></div>
+                    
+                    <div class="portfolio-hover-item">
+                        <h2>{{list.title}}</h2>
+                        <p>{{list.about|truncatewords:15}}</p>
+                        <a href="{% url 'pages:portfolio_details' list.slug %}" target='_blank'><span class='impo-text'>View</span> Project</a>
+                    </div>
+                    
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+            
+    </section>
+
+    <section class="work-with-me">
+        <div class="service">
+
+            <div class='service-item service-content'>
+                <h1 class="service-header">Do You Have A <span class="new">New</span> Project?</h1>
+                <p class='service-text'>Do you need a web application, website or HTML emails for your: </p>
+
+                <div class="service-lists">
+
+                    <ul class="service-list">
+                        <li>⚡ Blog</li>
+                        <li>⚡ Business</li>
+                        <li>⚡ Coming-Soon/Product Launch</li>
+                        <li>⚡ Donation/Fund Raising</li>
+                        <li>⚡ Ecommerce</li>
+                        <li>⚡ E-payment</li>
+                        <li>⚡ Event</li>
+                        <li>⚡ Portfolio</li>
+                        <li>⚡ School</li>
+                    </ul>
+                    <ul class="service-list">
+                        <li>⚡ Welcome Emails</li>
+                        <li>⚡ Engagement/Invitation Emails</li>
+                        <li>⚡ Announcement Emails</li>
+                        <li>⚡ Newsletter Emails</li>
+                        <li>⚡ Promotional Emails</li>
+                        <li>⚡ Transactional Emails</li>
+                        <li>⚡ Cold Emails</li>
+                        <li>⚡ Email Campaigns</li>
+                        <li>⚡ Email Automations</li>
+                    </ul>
+                </div>
+                <p class='service-text'>Contact me now and get 30% discount on your new project, with 1 year free hosting 🔥.</p>
+                <div class="btn-links">
+                    <div class="contact-btn z-1"><a href=""><p class='contact-btn-text'>Get in Touch</p></a></div>
+                </div>
+                
+            </div>
+            <div class="service-item service-img"><img src="../../static/pages/img/service-image.jpg" alt=""></div>
+
+        </div>
+    </section>
+
+    {% comment %} <section class="blogs">
+        <div class="section-header">
+            <h1 class='section-title'><span class='impo-text'>MY</span> BLOG<span class='bg-text'>BLOG</span></h1>
+            <p class='section-description'>
+                Here is some of the blog post that I have written related to my skills and tech stacks.
+            </p>
+        </div>
+
+        <ul class="grid blogs-grid">
+       
+            {% for list in posts %}
+            <li id="blog-{{forloop.counter}}">
+                <div class="blog">
+                    <img src="{{list.image.url}}" alt="blog image"/>
+                    
+                    <div class="blog-text">
+                        <h4>{{list.title}}</h4>
+                        <p class='blog-description'>{{list.description|truncatewords:20}}</p>
+                        <a href="{{list.get_absolute_url}}" target='_blank'><span class='impo-text'>Read</span> More</a>
+                    </div>
+                    
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section> {% endcomment %}
+    
+    <section id='Contact' class="contact-me">
+        <div class="section-header">
+            <h1 class='section-title z-2'>CONTACT <span class='impo-text'>ME</span><span class='contact-bg-text z-1'>CONTACT</span></h1>
+            <p class='section-description'>
+                I am open to contracts, collaborations, mentorships and full time jobs.
+            </p>
+        </div>
+
+        <div class="contact-content">
+            <div class="left-contact">
+                <div class="contact-title">
+                    <h4>Contact me here</h4>
+                    <p>
+                        you can reach out to me through any of these contact details for projects, freelancing and consultations etc.
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>PHONE:</h4>
+                        <p>+2349132736053,<br/>+2349127877831</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>EMAIL:</h4>
+                        <p>emmattxdev@gmail.com</p>
+                        <p>emmanuelchukwukac1@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>LOCATION:</h4>
+                        <p>Owerri, Imo Nigeria.</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="right-contact">
+                <form action='' method="POST" enctype="multipart/form-data" class="contact-form">
+                    {% csrf_token %}
+                    
+                    <div class="input-control i-c-2">
+                        {{form.first_name}}
+                        {{form.last_name}}
+                    </div>
+                    <div class="input-control">
+                        {{form.email}}
+                    </div>
+                    <div class="input-control">
+                        {{form.subject}}
+                    </div>
+                    <div class="input-control">
+                        {{form.message}}
+                    </div>
+                    <div class="btn-links">
+                        <div class="submit-btn z-1">
+                    
+                            <button class='submit-btn-text' type="submit">Send...</button>
+                
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% include 'pages/partials/cv.html' %}
+{% include 'pages/partials/footer.html' %}
+
+{% endblock bodyMain %}

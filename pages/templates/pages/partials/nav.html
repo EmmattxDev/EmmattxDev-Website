@@ -1,0 +1,40 @@
+{% load static %}
+<nav ariel-label-'primary menu' class='nav z-3'>
+    <div class='nav-brand'>
+        <a href="{% url 'pages:home' %}"><img src="{% static 'pages/img/my-logo-header.png' %}" alt="" srcset=""></a>
+    </div>
+
+    <div class="theme-toggle">
+        <span class='light'>Light</span>
+        <input type="checkbox" name="theme_switch" id="checkMode"/>
+        <label for="checkMode" class='toggle'></label>
+        <span class='dark'>Dark</span>
+    </div>
+
+    
+    <div class="menu-wrap">
+                    
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div id="menu-tog" class="menu">
+            <div>
+                <div class='nav-links'>
+                    <ul>
+                        <li><a class="{% url 'pages:home' as home_url %} {% if request.get_full_path == home_url %} a--active {% endif %}" href="{% url 'pages:home' %}">Home</a></li>
+
+                        <li><a class="{% url 'pages:about' as about_url %} {% if request.get_full_path == about_url %} a--active {% endif %}" href="{% url 'pages:about' %}">About</a></li>
+
+                        <li><a class="{% url 'pages:portfolio' as portfolio_url %} {% if request.get_full_path == portfolio_url %} a--active {% endif %}" href="{% url 'pages:portfolio' %}">Portfolio</a></li>
+
+                        {% comment %} <li><a class="{% url 'base:home' as blog_url %} {% if request.get_full_path == blog_url %} a--active {% endif %}" href="{% url 'base:home' %}">Blog</a></li> {% endcomment %}
+
+                        <li><a class="{% url 'pages:contact' as contact_url %} {% if request.get_full_path == contact_url %} a--active {% endif %}" href="{% url 'pages:contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</nav>

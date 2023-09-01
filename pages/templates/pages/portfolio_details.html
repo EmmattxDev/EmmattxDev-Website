@@ -1,0 +1,15 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %} Portfolio {% endblock title %}
+{% block bodyMain %}
+{% include 'pages/partials/nav.html' %}
+
+<h2>this is the portfolio details page</h2>
+
+<h2>{{project.title}}</h2>
+
+<h3>${{project.stack}}</h3>
+
+<p> {{project.about}} </p>
+
+{% endblock bodyMain %}

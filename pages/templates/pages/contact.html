@@ -1,0 +1,9 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %} Contact {% endblock title %}
+<link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
+{% block bodyMain %}
+{% include 'pages/partials/nav.html' %}
+<h2>this is the contact page</h2>
+{% include 'pages/partials/footer.html' %}
+{% endblock bodyMain %}
