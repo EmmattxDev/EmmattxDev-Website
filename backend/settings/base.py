@@ -35,10 +35,10 @@ INSTALLED_APPS = [
 
     # third party packages
     # 'rest_framework',
-    # 'decouple',
+
 
     #myOwnApps
-    'api',
+    # 'api',
     # 'authentication',
     # 'base',
     # 'blog',
