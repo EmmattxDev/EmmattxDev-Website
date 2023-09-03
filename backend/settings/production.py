@@ -19,7 +19,7 @@ environ.Env.read_env(os.path.join(BASE_DIR , '.env'))
 # False if not in os.environ because of casting above
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
 
 
 # Raises Django's ImproperlyConfigured
