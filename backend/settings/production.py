@@ -6,7 +6,7 @@ import os
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
-    ALLOWED_HOSTS=(list, [])
+    # ALLOWED_HOSTS=(list, [])
 )
 
 
@@ -19,7 +19,7 @@ environ.Env.read_env(os.path.join(BASE_DIR , '.env'))
 # False if not in os.environ because of casting above
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS: list[str] = env('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # Raises Django's ImproperlyConfigured
