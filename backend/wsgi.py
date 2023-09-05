@@ -12,6 +12,7 @@ from backend.settings import development
 
 from django.core.wsgi import get_wsgi_application
 
+
 if development.DEBUG:
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings.development')
 else:

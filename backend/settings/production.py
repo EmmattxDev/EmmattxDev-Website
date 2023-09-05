@@ -1,76 +1,51 @@
 from .base import *
 
-import environ
-import os 
+import os
+from dotenv import load_dotenv
+# load_dotenv()  # loads the configs from .env
+load_dotenv(BASE_DIR / '.env')
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False),
-    # ALLOWED_HOSTS=(list, [])
-)
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.getenv('SECRET_KEY')
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-# # Set the project base directory
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
-# Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR , '.env'))
-
-# False if not in os.environ because of casting above
-DEBUG = env('DEBUG')
-
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
-
-
-# Raises Django's ImproperlyConfigured
-# exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
-
-# Parse database connection url strings
-# like psql://user:pass@127.0.0.1:8458/db
-DATABASES = {
-    # read os.environ['DATABASE_URL'] and raises
-    # ImproperlyConfigured exception if not found
-    #
-    # The db() method is an alias for db_url().
-    'default': env.db(),
-
-    # read os.environ['SQLITE_URL']
-    'extra': env.db_url(
-        'SQLITE_URL',
-        default='sqlite:////tmp/my-tmp-sqlite.db'
-    )
-}
-
-# Email Configurations
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = env('EMAIL_PORT')
-
-
-# CACHES = {
-#     # Read os.environ['CACHE_URL'] and raises
-#     # ImproperlyConfigured exception if not found.
-#     #
-#     # The cache() method is an alias for cache_url().
-#     'default': env.cache(),
-
-#     # read os.environ['REDIS_URL']
-#     'redis': env.cache_url('REDIS_URL')
-# }
-
-# HTTPS settings
-SESSION_COOKIE_SECURE = env('SESSION_COOKIE_SECURE')
-CSRF_COOKIE_SECURE = env('CSRF_COOKIE_SECURE')
-SECURE_SSL_REDIRECT = env('SECURE_SSL_REDIRECT')
+SECURE_SSL_REDIRECT = \
+  os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
 if SECURE_SSL_REDIRECT:
   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# HSTS settings
-SECURE_HSTS_SECONDS = env('SECURE_HSTS_SECONDS')
-SECURE_HSTS_PRELOAD = env('SECURE_HSTS_PRELOAD')
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env('SECURE_HSTS_INCLUDE_SUBDOMAINS')
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': os.environ.get('DBNAME'),
+    'HOST': os.environ.get('DBHOST'),
+    'USER': os.environ.get('DBUSER'),
+    'PASSWORD': os.environ.get('DBPASS'),
+    'OPTIONS': {'sslmode': 'require'},
+  }
+}
+
+# Email Configurations
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+
+# HTTPS settings
+SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE')
+CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE')
+
+
+# # HSTS settings
+# SECURE_HSTS_SECONDS =
+# SECURE_HSTS_PRELOAD =
+# SECURE_HSTS_INCLUDE_SUBDOMAINS =
 
 
 # staticfiles management for whitenoise
@@ -81,8 +56,8 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = env('SECURE_HSTS_INCLUDE_SUBDOMAINS')
 DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
 STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
 
-AZURE_ACCOUNT_NAME = env('AZURE_ACCOUNT_NAME')
-AZURE_ACCOUNT_KEY = env('AZURE_ACCOUNT_KEY')
+AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
 STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
