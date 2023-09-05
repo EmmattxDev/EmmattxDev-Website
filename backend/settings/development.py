@@ -9,7 +9,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+DEBUG = True
 
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 
@@ -31,7 +31,7 @@ DATABASES = {
 }
 
 # Email Configurations
-EMAIL_HOST =env('EMAIL_HOST')
-EMAIL_HOST_USER =env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD =env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT =env('EMAIL_PORT')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
