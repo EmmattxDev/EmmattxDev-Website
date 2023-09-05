@@ -3,7 +3,7 @@ from .base import *
 import os
 from dotenv import load_dotenv
 # load_dotenv()  # loads the configs from .env
-load_dotenv(BASE_DIR / '.env')
+load_dotenv(BASE_DIR / '.env.dev')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
