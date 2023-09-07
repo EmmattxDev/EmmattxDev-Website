@@ -10,7 +10,7 @@ class Project(models.Model):
     slug = models.SlugField(default='', blank=True)
     about = models.TextField(blank=False)
     stack = models.CharField(max_length=200, null=False)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=now)
     completed = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True)
     image = models.ImageField(default='', blank=True)
