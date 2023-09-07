@@ -66,3 +66,5 @@ STATIC_ROOT = "staticfiles/"
 
 MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
 MEDIA_ROOT = "mediafiles/"
+
+USE_TZ = True

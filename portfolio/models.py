@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.timezone import now
+
 
 # Create your models here.
 class Project(models.Model):
@@ -8,9 +10,9 @@ class Project(models.Model):
     slug = models.SlugField(default='', blank=True)
     about = models.TextField(blank=False)
     stack = models.CharField(max_length=200, null=False)
-    created = models.DateTimeField(auto_now_add=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
     completed = models.BooleanField(default=False)
-    updated = models.DateTimeField(auto_now=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
     image = models.ImageField(default='', blank=True)
 
     def __str__(self):
