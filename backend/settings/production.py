@@ -1,5 +1,6 @@
 from .base import *
 
+import dj_database_url
 import os
 from dotenv import load_dotenv
 # load_dotenv()  # loads the configs from .env
@@ -20,16 +21,20 @@ if SECURE_SSL_REDIRECT:
   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': os.environ.get('DBNAME'),
+#     'HOST': os.environ.get('DBHOST'),
+#     'USER': os.environ.get('DBUSER'),
+#     'PASSWORD': os.environ.get('DBPASS'),
+#     'PORT': os.environ.get('DBPORT'),
+#     'OPTIONS': {'sslmode': 'require'},
+#   }
+# }
+
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': os.environ.get('DBNAME'),
-    'HOST': os.environ.get('DBHOST'),
-    'USER': os.environ.get('DBUSER'),
-    'PASSWORD': os.environ.get('DBPASS'),
-    'PORT': os.environ.get('DBPORT'),
-    'OPTIONS': {'sslmode': 'require'},
-  }
+	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Email Configurations
