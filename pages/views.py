@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-from backend import settings
+from backend.settings import development, production
 from portfolio.models import Project, Experience
 # from base.views import *
 # from blog.models import Post
@@ -13,10 +13,11 @@ from contact.forms import ContactForm
 def home(request):
     projects = Project.objects.all()
     experience = Experience.objects.all()
-    """
-    FOR BLOG POST
-    posts = Post.objects.all()
-    """
+
+    # """
+    # FOR BLOG POST
+    # posts = Post.objects.all()
+    # """
     
 
     # if this is a POST request we need to process the form data
@@ -47,10 +48,10 @@ def home(request):
                 }
             )
 
-            if settings.development:
-                sender = settings.development.EMAIL_HOST_USER
+            if not development.DEBUG:
+                sender = production.EMAIL_HOST_USER
             else:
-                sender = settings.production.EMAIL_HOST_USER
+                sender = development.EMAIL_HOST_USER
             recipients = ['emmattxdev@gmail.com', 'emmanuelchukwukac1@gmail.com']
 
             #send email
