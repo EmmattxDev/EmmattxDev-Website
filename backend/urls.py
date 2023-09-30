@@ -26,7 +26,7 @@ urlpatterns = [
 
     # my main pages for my website
     path('', include('pages.urls')),
-
+]
     
 #     # blog home pages and templates
 #     path('base/', include('base.urls')),
@@ -47,7 +47,7 @@ urlpatterns = [
 
 #    # feedback test urls
 #    path('feedback/', include('feedback.urls')),
-]
+
 
 
 if settings.development.DEBUG:
