@@ -1,10 +1,6 @@
 from django.db import models
 
 # Create your models here.
-# fName = request.POST["fName"]
-#         email = request.POST["email"]
-#         sbj = request.POST["sbj"]
-#         msg = request.POST["msg"]
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=50, null=False)

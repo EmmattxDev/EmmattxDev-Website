@@ -1,0 +1,93 @@
+// for homepage
+.portfolio{
+    background-color: var(--portfolio-bg);
+    // position: relative;
+
+    #portfolio-title{
+        color: var(--portfolio-title-color);
+    }
+
+    #portfolio-description{
+        color: var(--portfolio-title-color);
+    }
+    .portfolio-impo-text{
+        color: var(--portfolio-desc-text);
+    }
+    .portfolio-grid{
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 50px;
+        row-gap: 50px;
+        justify-content: center;
+        padding: 100px 0;
+
+        li{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .portfolio-item{
+                position: relative;
+                width: 100%;
+                border-radius: 30px;
+
+                .portfolio-img{
+                    
+                    img{
+                        width: 100%;
+                        height: 440px;
+                        object-fit: cover;
+                        border-radius: 30px;
+                    }
+                }
+
+                .portfolio-hover-item{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg,var(--primary-color), 60%,var(--secondary-color));
+                    border-radius: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: all .4s ease-in-out;
+
+                    h2{
+                        color: var(--text-white);
+                    }
+
+                    p{
+                        color: var(--text-white);
+                        text-align: center;
+                        padding-top: 27px;
+                    }
+
+                    a{
+                        text-align: center;
+                        vertical-align: middle;
+                        font-weight: 700;
+                        color: var(--primary-color);
+                        background-color: var(--bg-white);
+                        padding: 3px 8px;
+                        margin-top: 27px;
+                        border-radius: 15px;
+                    }
+
+                }
+
+                
+            }
+
+            .portfolio-item:hover .portfolio-hover-item{
+                opacity: .95;
+                transform: scale(1);
+            }
+        }
+
+    }
+}

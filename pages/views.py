@@ -48,10 +48,10 @@ def home(request):
                 }
             )
 
-            if not development.DEBUG:
-                sender = production.EMAIL_HOST_USER
-            else:
+            if development.DEBUG:
                 sender = development.EMAIL_HOST_USER
+            else:
+                sender = production.EMAIL_HOST_USER
             recipients = ['emmattxdev@gmail.com', 'emmanuelchukwukac1@gmail.com']
 
             #send email

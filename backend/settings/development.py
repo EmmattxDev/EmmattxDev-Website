@@ -13,7 +13,7 @@ DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Database
@@ -38,7 +38,7 @@ EMAIL_PORT = os.getenv('EMAIL_PORT')
 
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static/"),
+   os.path.join(BASE_DIR / "static/"),
 ]
 
 

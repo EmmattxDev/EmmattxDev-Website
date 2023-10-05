@@ -1,0 +1,43 @@
+@import 'variables';
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    position: relative;
+    font-size: inherit;
+    font-family: var(--font-stack);
+}
+
+body{
+    position: relative;
+    background-color: var(--body-bg);
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+img, picture, video, embed{
+    max-width: 100%;
+}
+
+@import 'theme';
+@import 'utilities';
+@import 'btn';
+@import 'nav';
+@import 'header';
+@import 'about';
+@import 'skills';
+@import 'timeline';
+@import 'portfolio';
+@import 'portfolioPage';
+@import 'work';
+@import 'blog';
+@import 'contact';
+@import 'footer';
+@import 'breakpoints';
+@import 'mediaqueries';

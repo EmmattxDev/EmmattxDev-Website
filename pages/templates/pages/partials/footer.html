@@ -3,7 +3,7 @@
     <div class="footer-main">
         <div class="footer-content">
             <div class="footer-logo">
-                <a href="http://localhost:7080/"><img src="{% static 'pages/img/my-logo-header.png' %}" alt="" srcset=""></a>
+                <a href="{% url 'pages:home' %}"><img src="{% static 'pages/img/my-logo-header.png' %}" alt="EmmmattxDev brand logo" srcset=""></a>
                 <p class="footer-logo-motto">Recreated programming for the future.</p>
             </div>
 
@@ -13,7 +13,6 @@
                     <li><a href="{% url 'pages:home' %}">Home</a></li>
                     <li><a href="{% url 'pages:about' %}">About</a></li>
                     <li><a href="{% url 'pages:portfolio' %}">Portfolio</a></li>
-                    {% comment %} <li><a href="{% url 'base:home' %}">Blog</a></li> {% endcomment %}
                     <li><a href="{% url 'pages:contact' %}">Contact</a></li>
                 </ul>
             </div>

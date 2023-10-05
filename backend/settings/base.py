@@ -33,20 +33,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
 
-    # third party packages
-    # 'rest_framework',
-
-
     #myOwnApps
-    # 'api',
-    # 'authentication',
-    # 'base',
-    # 'blog',
     'contact',
-    # 'feedback',
     'pages',
     'portfolio',
-    # 'search',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +55,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR / 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

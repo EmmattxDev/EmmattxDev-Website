@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
 SECURE_SSL_REDIRECT = \
@@ -56,10 +56,8 @@ EMAIL_PORT = os.getenv('EMAIL_PORT')
 
 # staticfiles management for whitenoise
 STATIC_URL = '/static/'
-
-if not DEBUG:
-  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/') 
-  STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/') 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 #persistent storage with azure storage
 DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
@@ -72,6 +70,6 @@ AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 # STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
 
 MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles/') 
+MEDIA_ROOT = os.path.join(BASE_DIR / 'mediafiles/') 
 
 USE_TZ = True

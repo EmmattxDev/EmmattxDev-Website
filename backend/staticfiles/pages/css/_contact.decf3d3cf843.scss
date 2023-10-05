@@ -1,0 +1,109 @@
+.contact-me{
+    background-color: var(--primary-color-4);
+
+    .contact-content{
+        display: flex;
+        padding: 100px;
+
+        .left-contact{
+            flex: 2;
+            margin-right: 1.5rem;
+
+            .contact-title{
+                
+
+                h4{
+                    font-size: 32px;
+                    color: var(--secondary-color);
+                    padding-bottom: 18px;
+                }
+
+                p{
+                    font-size: 18px;
+                    padding-bottom: 27px;
+                }
+            }
+
+            .contact-info{
+
+                .contact-item{
+                    padding-bottom: 27px;
+                    :last-child{
+                        padding-bottom: 0;
+                    }
+
+                    h4{
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: var(--primary-color);
+                    }
+
+                    p{
+                        // font-size: 16px;
+                        font-weight: 400;
+                        padding-top: 8px;
+                    }
+                }
+
+            }
+        }
+
+        .right-contact{
+            flex: 3;
+            margin-left: 3rem;
+
+            .input-control{
+                
+                
+                margin-bottom: 1.5rem;
+
+                // :first-child{
+                //     margin-top: 0;
+                // }
+
+                input, textarea{
+                    border-radius: 30px;
+                    font-weight: inherit;
+                    font-size: inherit;
+                    font-family: inherit;
+                    padding: .8rem 1.1rem;
+                    outline: none;
+                    border: none;
+                    background-color: var(--input-bg);
+                    width: 100%;
+                    color: var(--input-color);
+                    resize: none;
+                }
+
+                ::placeholder{
+                    color: var(--text-primary);
+                }
+
+                ::after{
+                    border: var(--primary-color) 1px solid;
+
+                }
+
+                
+            }
+            .i-c-2{
+                display: flex;
+                :last-child{
+                    margin-left: 1.5rem;
+                }
+            }
+            
+            .btn-links{
+                padding-top: 0;
+
+                .submit-btn{
+                    button{
+                        // width: 160px;
+                        text-align: center;
+                        padding: 6px 60px;
+                    }
+                }
+            }
+        }
+    }
+}
