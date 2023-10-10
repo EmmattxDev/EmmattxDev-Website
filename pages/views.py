@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-from backend.settings import development, production
+from backend import settings
 from portfolio.models import Project, Experience
 # from base.views import *
 # from blog.models import Post
@@ -48,10 +48,8 @@ def home(request):
                 }
             )
 
-            if development.DEBUG:
-                sender = development.EMAIL_HOST_USER
-            else:
-                sender = production.EMAIL_HOST_USER
+            
+            sender = settings.EMAIL_HOST_USER
             recipients = ['emmattxdev@gmail.com', 'emmanuelchukwukac1@gmail.com']
 
             #send email
