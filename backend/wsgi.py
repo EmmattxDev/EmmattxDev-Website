@@ -8,14 +8,10 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
 import os
-from backend.settings import development
-
 from django.core.wsgi import get_wsgi_application
 
 
-if development.DEBUG:
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings.development')
-else:
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings.production')
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
 application = get_wsgi_application()

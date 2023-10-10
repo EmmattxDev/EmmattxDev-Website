@@ -10,15 +10,34 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import dj_database_url
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# load_dotenv()  # loads the configs from .env
+load_dotenv(BASE_DIR / '.env')
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(',')
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
+    if SECURE_SSL_REDIRECT:
+        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 
@@ -107,11 +126,63 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static/"),
+   os.path.join(BASE_DIR / "static/"),
 ]
+
+
+
+
+if not DEBUG:
+    # Azure blob storage access key and domain endpoint
+    AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
+    AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
+    AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+
+    # storage backend for whitenoise
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+    # storage backend for azure 
+    # STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
+
+    #persistent mediafiles storage with azure storage
+    DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
+
+    # staticfiles management for whitenoise
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/') 
+
+    # staticfiles management for azure storage
+    # STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
+
+    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR / 'mediafiles/')
+else:
+    STATIC_URL = 'static/'
+
+    MEDIA_URL = 'media/'
+    MEDIA_ROOT = 'media'
+
+
+DATABASES = {
+	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+# Email Configurations
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+
+# HTTPS settings
+# SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE')
+# CSRF_COOKIE_SECURE = os.getenv('CSRF_COOKIE_SECURE')
+
+
+# HSTS settings
+# SECURE_HSTS_SECONDS =
+# SECURE_HSTS_PRELOAD =
+# SECURE_HSTS_INCLUDE_SUBDOMAINS =
 
 
 # Default primary key field type
