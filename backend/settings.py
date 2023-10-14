@@ -144,7 +144,7 @@ if not DEBUG:
     AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
     # storage backend for whitenoise
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     # storage backend for azure 
     STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
