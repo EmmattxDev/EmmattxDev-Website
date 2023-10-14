@@ -64,7 +64,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -147,17 +147,19 @@ if not DEBUG:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     # storage backend for azure 
-    # STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
+    STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
 
     #persistent mediafiles storage with azure storage
-    DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
+    # DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
 
     # staticfiles management for whitenoise
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/') 
+    # STATIC_URL = '/static/'
 
     # staticfiles management for azure storage
-    # STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
+    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
+
+    STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/') 
+
 
     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR / 'mediafiles/')
