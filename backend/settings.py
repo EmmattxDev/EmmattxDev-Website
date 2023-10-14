@@ -150,7 +150,7 @@ if not DEBUG:
     STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
 
     #persistent mediafiles storage with azure storage
-    # DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
+    DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
 
     # staticfiles management for whitenoise
     # STATIC_URL = '/static/'
