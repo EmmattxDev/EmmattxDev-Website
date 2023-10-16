@@ -1433,7 +1433,7 @@ footer .footer-main .footer-copy {
   padding: 10px 15px 30px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .about,
   .skills,
   .timeline,
@@ -1911,7 +1911,7 @@ footer .footer-main .footer-copy {
     padding: 40px 0 0;
   }
 }
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 481px) {
   .toggler {
     display: none;
   }
