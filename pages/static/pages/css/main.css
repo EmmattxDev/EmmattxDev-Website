@@ -1433,7 +1433,7 @@ footer .footer-main .footer-copy {
   padding: 10px 15px 30px;
 }
 
-@media (min-width: 350px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .about,
   .skills,
   .timeline,

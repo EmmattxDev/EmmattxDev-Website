@@ -1,5 +1,5 @@
 @mixin for-phone-only {
-    @media (min-width:350px) and (max-width: 480px){ @content;}
+    @media (min-width:320px) and (max-width: 480px){ @content;}
     
 }
 
@@ -9,7 +9,7 @@
 }
 
 @mixin for-tablet-landscape-up {
-    @media (min-width: 1024px) and (max-width: 1200px){ @content;}
+    @media (min-width: 1025px) and (max-width: 1200px){ @content;}
     
 }
 
