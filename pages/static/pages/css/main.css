@@ -1911,7 +1911,7 @@ footer .footer-main .footer-copy {
     padding: 40px 0 0;
   }
 }
-@media screen and (min-width: 481px) {
+@media only screen and (min-width: 481px) {
   .toggler {
     display: none;
   }
