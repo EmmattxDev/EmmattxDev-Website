@@ -105,7 +105,7 @@
     .header{
         
         .hero{
-            padding-top: 120px;
+            padding-top: 80px;
             &-content{
                 align-self: center;
                 text-align: center;
@@ -152,7 +152,6 @@
     //about section
     .about{
         flex-direction: column;
-        height: 100%;
 
         &-img{
             width: 300px;
