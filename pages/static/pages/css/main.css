@@ -842,7 +842,7 @@ footer .footer-main .footer-content .footer-social .footer-social-links a .socia
   position: absolute;
   left: -70px;
   bottom: -70px;
-  background: url("../img/ball-background.png") center center/cover no-repeat;
+  background: url("../img/ball-background.png") center center/cover no-repeat, url("https://portfoliostatic1.blob.core.windows.net/static/img/ball-background.png") center center/cover no-repeat, url();
   opacity: 0.9;
   width: 208px;
   height: 100%;
@@ -868,6 +868,7 @@ footer .footer-main .footer-content .footer-social .footer-social-links a .socia
 }
 .about-img {
   width: 300px;
+  padding: 0 20px 0 0;
 }
 .about-content {
   position: relative;
@@ -1453,10 +1454,10 @@ footer .footer-main .footer-copy {
   .section-header .section-title .bg-text,
   .section-header .section-title .skills-bg-text,
   .section-header .section-title .contact-bg-text {
-    font-size: 70px;
+    font-size: 68px;
   }
   .section-header .section-title .portfolio-bg-text {
-    font-size: 62px;
+    font-size: 58px;
   }
   .section-header .section-description {
     font-size: 14px;
@@ -1691,6 +1692,7 @@ footer .footer-main .footer-copy {
   }
   .header .hero-content > p {
     font-size: 14px;
+    padding: 27px 0 0 0;
   }
   .header .hero__img, .header .hero__img::before {
     display: none;
@@ -1709,10 +1711,11 @@ footer .footer-main .footer-copy {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 130vh;
+    height: 100%;
   }
   .about-img {
     width: 300px;
+    padding: 0 0 40px 0;
   }
   .about-content {
     padding: 0 0;

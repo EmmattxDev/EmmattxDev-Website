@@ -22,11 +22,11 @@
             .bg-text,
             .skills-bg-text,
             .contact-bg-text{
-                font-size: 70px;
+                font-size: 68px;
             }
 
             .portfolio-bg-text{
-                font-size: 62px;
+                font-size: 58px;
             }
         }
 
@@ -120,6 +120,7 @@
 
                 > p{
                     font-size: 14px;
+                    padding: 27px 0 0 0;
                 }
             }
 
@@ -151,9 +152,11 @@
     //about section
     .about{
         flex-direction: column;
-        height: 130vh;
+        height: 100%;
+
         &-img{
             width: 300px;
+            padding: 0 0 40px 0;
         }
 
         &-content{
