@@ -22,7 +22,7 @@ from . import settings
 
 urlpatterns = [
     # administration 
-    path('admin/', admin.site.urls),
+    path('professor4jesus/admin/', admin.site.urls),
 
     # my main pages for my website
     path('', include('pages.urls')),
