@@ -1737,7 +1737,7 @@ footer .footer-main .footer-copy {
   }
   .skills-fields .skills-field-1 .skills-field-title,
   .skills-fields .skills-field-2 .skills-field-title {
-    font-size: 52px;
+    font-size: 42px;
   }
   .timeline-grid {
     grid-template-columns: repeat(1, 1fr);
