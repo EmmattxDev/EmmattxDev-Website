@@ -25,18 +25,19 @@ load_dotenv(BASE_DIR / '.env')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '.emmattxdev.com').split(' ')
-ALLOWED_HOSTS = ['www.emmattxdev.com', 'emmattxdev.com', 'emmattxdev.onrender.com', '127.0.0.1', 'localhost']
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
-    
+
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '.emmattxdev.com').split(' ')
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+
+# if not DEBUG:
+    # CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
+
     # SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
     # if SECURE_SSL_REDIRECT:
     #     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -129,50 +130,67 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR / "backend/static/"),
+   
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
-
-
-
-if not DEBUG:
-    # Azure blob storage access key and domain endpoint
-    AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
-    AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
-    AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-
-    # storage backend for whitenoise
-    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-    # storage backend for azure 
-    STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
-
-    #persistent mediafiles storage with azure storage
-    DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
-
-    # staticfiles management for whitenoise
-    # STATIC_URL = '/static/'
-
-    # staticfiles management for azure storage
-    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
-
-    STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/') 
-
-
-    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR / 'mediafiles/')
-else:
-    STATIC_URL = 'static/'
-
-    MEDIA_URL = 'media/'
-    MEDIA_ROOT = 'media'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 DATABASES = {
-	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"), conn_max_age=600),
+    "default": 
+        dj_database_url.parse(os.environ.get("DATABASE_URL"), conn_max_age=600, engine='django.db.backends.postgresql' ),
 }
+
+# if not DEBUG:
+#     # Azure blob storage access key and domain endpoint
+#     # AZURE_ACCOUNT_NAME = os.getenv('AZURE_ACCOUNT_NAME')
+#     # AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY')
+#     # AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+
+#     # storage backend for whitenoise
+#     # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+#     # storage backend for azure
+#     # STATICFILES_STORAGE = 'backend.azure_storage.AzureStaticStorage'
+
+#     #persistent mediafiles storage with azure storage
+#     # DEFAULT_FILE_STORAGE = 'backend.azure_storage.AzureMediaStorage'
+
+#     # staticfiles management for whitenoise
+#     # STATIC_URL = '/static/'
+
+#     # staticfiles management for azure storage
+#     STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/static/'
+
+#     STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles/')
+
+
+#     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/media/'
+#     MEDIA_ROOT = os.path.join(BASE_DIR / 'mediafiles/')
+
+#     # database config
+    
+#     DATABASES = {
+#         "default": 
+#             dj_database_url.parse(os.environ.get("DATABASE_URL"), conn_max_age=600, engine='django.db.backends.postgresql' ),
+#     }
+# else:
+#     STATIC_URL = 'static/'
+
+#     MEDIA_URL = 'media/'
+#     MEDIA_ROOT = 'media'
+
+#     # database config
+#     DATABASES = {
+#         "default": 
+#             dj_database_url.parse(os.environ.get("DATABASE_URL"), conn_max_age=600, engine='django.db.backends.mysql' ),
+#     }
+
 
 # Email Configurations
 EMAIL_HOST = os.getenv('EMAIL_HOST')

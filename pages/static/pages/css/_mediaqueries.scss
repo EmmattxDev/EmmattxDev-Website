@@ -74,7 +74,8 @@
                 
                 img{
     
-                    width: 100px;
+                    width: 5rem;
+                    height: 5rem;
                 }
             }
         }
@@ -224,6 +225,7 @@
 
     //portfolio section
     .portfolio{
+        
         .portfolio-grid{
             grid-template-columns: repeat(1, .8fr);
 
@@ -399,6 +401,20 @@
             .footer-content{
                 flex-direction: column;
 
+                .footer-logo{
+    
+                    a{ 
+                    
+                        img{
+            
+                            width: 4rem;
+                            height: 4rem;
+                        }
+                    }
+    
+                
+                }
+
                 .footer-social{
                     padding: 40px 0 0;
                     .footer-social-links{
@@ -429,7 +445,15 @@
 }
 
 @include for-laptop-only{
+    
+}
 
+@media only screen and (max-width: 1024px) {
+    .portfolio{
+        .desktop-instruct-text{
+            display: none;
+        }
+    }
 }
 
 @include for-desktop-up{

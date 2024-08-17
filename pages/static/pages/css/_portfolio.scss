@@ -1,18 +1,18 @@
 // for homepage
 .portfolio{
-    background-color: var(--portfolio-bg);
+    // background-color: var(--portfolio-bg);
     // position: relative;
 
-    #portfolio-title{
-        color: var(--portfolio-title-color);
-    }
+    // #portfolio-title{
+    //     color: var(--portfolio-title-color);
+    // }
 
-    #portfolio-description{
-        color: var(--portfolio-title-color);
-    }
-    .portfolio-impo-text{
-        color: var(--portfolio-desc-text);
-    }
+    // #portfolio-description{
+    //     color: var(--portfolio-title-color);
+    // }
+    // .portfolio-impo-text{
+    //     color: var(--portfolio-desc-text);
+    // }
     .portfolio-grid{
         grid-template-columns: repeat(3, 1fr);
         column-gap: 50px;
