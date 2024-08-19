@@ -133,7 +133,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR / "backend/static/"),
-   
+   os.path.join(BASE_DIR / "pages/static/"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
@@ -194,10 +194,10 @@ DATABASES = {
 
 
 # Email Configurations
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = os.getenv('EMAIL_PORT')
+# EMAIL_HOST = os.getenv('EMAIL_HOST')
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+# EMAIL_PORT = os.getenv('EMAIL_PORT')
 
 # HTTPS settings
 # SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE')
