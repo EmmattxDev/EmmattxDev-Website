@@ -1,10 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 # build_files.sh
-
-python3.9 -m venv venv
-
-# activate the virtual environment
-source venv/bin/activate
-
-python3.9 -m pip install -r requirements.txt
+pip install -r requirements.txt
 python3.9 manage.py collectstatic --noinput
