@@ -32,8 +32,8 @@ DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '.emmattxdev.com').split(' ')
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
+# ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 # if not DEBUG:
     # CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
